@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Valuuttalaskin</h1> <br /> <br />
+    <input id="luku_1" />
+
+    <br /><br />
+
+    <button onclick="laskeEUR();">EUR -> USD</button>
+    <button onclick="laskeUSD();">USD -> EUR</button>
+    </br></br>
+    <div id="tulostusAlue", style="font-weight: bold"></div>
+
+    <script>
+        "use strict"
+        function laskeEUR() {
+            let kurssiEUR = 1.21;
+            //Päivän kurssi otettu Suomen Pankin sivustolta.
+            let eurtousd = Number(document.getElementById("luku_1").value);
+            // Muuttuja eurtousd saa arvonsa kentästä luku_1
+            let summa1 = eurtousd * kurssiEUR;
+            // Muuttujan summa1 määräytyy muuttujan eurtousd arvosta joka kerrotaan nimetyllä vakiolla kurssiUSD. Lopputuloksena saadaan lopullinen tulos.
+            document.getElementById("tulostusAlue").innerHTML = summa1 + " $";
+
+        }
+        function laskeUSD() {
+            // Painessa USD -> EUR, tämä funktio 
+            let kurssiUSD = 0.82;
+            // Päivän kurssi otettu Suomen Pankin sivustolta.
+            let usdtoeur = Number(document.getElementById("luku_1").value);
+            // Muuttuja usdtoeur saa arvonsa kentästä luku_1
+            let summa2 = usdtoeur * kurssiUSD;
+            // Muuttujan summa2 määräytyy muuttujan usdtoeur arvosta joka kerrotaan nimetyllä vakiolla kurssiUSD. Lopputuloksena saadaan lopullinen tulos.
+            document.getElementById("tulostusAlue").innerHTML = summa2 + " €";
+
+        }
+
+
+    </script>
+</body>
+</html>
